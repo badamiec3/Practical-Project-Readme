@@ -2,13 +2,11 @@
 
 ## Contents
 * [Aims](#aims)
-   * [Additional Requirements](#additional-requirements)
    * [My Approach](#my-approach)
 * [Architecture](#architecture)
    * [Database Structure](#database-structure)
    * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
-* [Risk Assessment](#risk-assessment)
 * [Testing](#testing)
 * [Front-End Design](#front-end-design)
 * [Known Issues](#known-issues)
@@ -26,17 +24,18 @@ This project encapsulates the following concepts:
 
 They are used to deploy a simple Flask application comprising of two services in a microservice architecture, and which was already provided, in a Continuous Intergation pipeline.
 
-In other words, I have been tasked with creating an application that utilises create, read, update and delete functions in order to function, such that I can demonstrate that I've learnt something over the last few weeks.
+In order to achieve this, the following technologies are used:
+* CI Server: Jenkins
+* Containerisation: Docker
+* Configuration Management: Ansible
+* Cloud Solutions: AWS EC2, VPC, RDS ad EKS
+* Infrastructure Management: Terraform
+* Orchestration Tool: Kubernetes
+* Reverse Proxy: NGINX
 
-### Additional Requirements
-In addition to what has been set out in the brief, I am also required to include the following:
-* A Trello board
-* A relational database, consisting of at least two tables that model a relationship
-* Clear documentation of the design phase, app architecture and risk assessment
-* A python-based functional application that follows best practices and design principles
-* Test suites for the application, which will include automated tests for validation of the application
-* A front-end website, created using Flask
-* Code integrated into a Version Control System which will be built through a CI server and deployed to a cloud-based virtual machine
+In addition, Git and GitHub were used as the version control system, and a Jira Kanban board was used for project planning.
+
+
 
 ### My Approach
 To achieve this, I have decided to produce a simple stargazing companion app that must allow the user to do the following:
@@ -107,13 +106,6 @@ The board has been designed such that elements of the project move from left to 
 * *Finished*
    Any element that is considered to be finished (i.e. works according to its specification) lives in this list.
 
-## Risk Assessment
-The risk assessment for this project can be found in full here: https://docs.google.com/spreadsheets/d/1WfKQAjsBfErpQOywRmnZbCe6zw7yFxESFB8WhQd69Es/edit?usp=sharing
-
-Here's a quick screenshot:
-
-![RiskAssessment][riskassessment]
-
 ## Testing
 pytest is used to run unit tests on the app. These are designed to assert that if a certain function is run, the output should be a known value. Jenkins produces console outputs (pictured below) that will inform the developer how many tests the code passed and which tests they failed.
 
@@ -172,7 +164,6 @@ Basia Adamiec
 
 [erd1]: https://i.imgur.com/p9wji5S.png
 [ci]: https://i.imgur.com/2G7joFp.png
-[riskassessment]: https://i.imgur.com/btY8HRY.png
 [coverage]: https://i.imgur.com/WDaANiD.png
 [pytestconsole]: https://i.imgur.com/qaa3uzp.png
 [trello]: https://i.imgur.com/etDOlwa.png
