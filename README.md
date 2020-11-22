@@ -109,7 +109,9 @@ The board has been designed such that elements of the project move from left to 
 ## Testing
 pytest is used to run unit tests on the app. These are designed to assert that if a certain function is run, the output should be a known value. Jenkins produces console outputs (pictured below) that will inform the developer how many tests the code passed and which tests they failed.
 
-![pytestconsole][pytestconsole]
+
+![Imgur][Imgur]
+
 
 pytest also produces a coverage report to show how much of the code in the app has been successfully tested. Jenkins automatically moves this report to the 'templates' folder so that it can be navigated to in a browser, as shown in the picture below.
 
@@ -162,10 +164,12 @@ There are a number of improvements I would like to implement (outside of current
 ## Authors
 Basia Adamiec
 
+[Imgur]: https://i.imgur.com/wz3MkW1.png
+
 [erd1]: https://i.imgur.com/p9wji5S.png
 [ci]: https://i.imgur.com/2G7joFp.png
 [coverage]: https://i.imgur.com/WDaANiD.png
-[pytestconsole]: https://i.imgur.com/qaa3uzp.png
+
 [trello]: https://i.imgur.com/etDOlwa.png
 [buildstages]: https://i.imgur.com/ba7ntAo.png
 [homeloggedout]: https://i.imgur.com/91NbyWE.png
