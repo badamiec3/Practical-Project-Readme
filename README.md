@@ -110,15 +110,17 @@ The board has been designed such that elements of the project move from left to 
 An important step in the CI pipeline is testing. The Jenkins pipeline in this project is designed in such a way that when a change is made to the source code, tests are ran and must succeed in order for the pipeline to proceed with the building and pushing of updated docker images to Docker Hub. 
 pytest is used to run the tests on the app. Tests were provided for both the backend and frontend of the flask app, and pytest generated a coverage report as a console output (pictured below) which informed the developer about which tests failed and which passed.
 
-Frontend report:
+Successful frontend report:
 
 ![frontendtest][frontendtest]
 
-Backend report:
+Successful backend report:
 
 ![backendtest][backendtest]
 
-The testing stages make use of the '| grep passed' command and the fact that a Jenkins pipeline stage will fail if the last console command in the stage is unsuccessful. If the test fails in either the backend or the frontend, the grep command will not find any line containing 'passed' and will instead show FAILURES, causing the pipeline to skip the later steps. No updated images are pushed to Docker Hub and the Kubernetes cluster pods and services are not configured.   
+The testing stages make use of the '| grep passed' command and the fact that a Jenkins pipeline stage will fail if the last console command in the stage is unsuccessful. If the test fails in either the backend or the frontend, the grep command will not find any line containing 'passed' and will instead show FAILURES, causing the pipeline to skip the later steps. No updated images are pushed to Docker Hub and the Kubernetes cluster pods and services are not configured. A failed test coverage report is shown below. 
+
+![failures][failures]
 
 ## Front-End Design
 The front-end of the app is rudimentary at this stage, as the front-end is built purely with very simple HTML. It is largely functional and stable, however.
@@ -169,6 +171,7 @@ Basia Adamiec
 
 [frontendtest]: https://i.imgur.com/wz3MkW1.png
 [backendtest]: https://i.imgur.com/dOb6OZe.png
+[failures]: https://i.imgur.com/qULC3iT.png
 
 [erd1]: https://i.imgur.com/p9wji5S.png
 [ci]: https://i.imgur.com/2G7joFp.png
