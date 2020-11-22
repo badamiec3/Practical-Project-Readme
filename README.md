@@ -170,7 +170,7 @@ There are a number of improvements I would like to implement (outside of current
 * Users can customise their accounts more with profile pictures, add other users as friends, change the colour palette of the website, etc.
 
 ## Authors
-Harry Volker
+Basia Adamiec
 
 [erd1]: https://i.imgur.com/p9wji5S.png
 [ci]: https://i.imgur.com/2G7joFp.png
