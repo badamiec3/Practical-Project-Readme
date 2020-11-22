@@ -1,7 +1,7 @@
 # CI Pipeline Practical Project Readme
 
 ## Contents
-* [Brief](#brief)
+* [Aims](#aims)
    * [Additional Requirements](#additional-requirements)
    * [My Approach](#my-approach)
 * [Architecture](#architecture)
@@ -15,9 +15,16 @@
 * [Future Improvements](#future-improvements)
 * [Authors](#authors)
 
-## Brief
-The brief provided to us for this project sets the following out as its overall objective:
-"To create a CRUD application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training."
+## Aims
+This project encapsulates the following concepts: 
+* Continuous Integration
+* Containerisation
+* Configuration Management
+* Cloud Solutions
+* Infrastructure Management
+* Orchestration
+
+They are used to deploy a simple Flask application comprising of two services in a microservice architecture, and which was already provided, in a Continuous Intergation pipeline.
 
 In other words, I have been tasked with creating an application that utilises create, read, update and delete functions in order to function, such that I can demonstrate that I've learnt something over the last few weeks.
 
