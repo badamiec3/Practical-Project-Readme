@@ -1,13 +1,4 @@
-# Practical-Project-Readme
-# Fundamental Project Example
-
-Below is the original README.md file for my fundamental project. It should give you an idea of the level of detail we're expecting for your project documentation for your fundamental project due Monday of Week 6.
-
-It's worth noting that this application no longer fits the current project specification, so don't follow it too closely for inspiration. Always refer to what's being asked of you in the spec.
-
-Please do not steal the diagrams in this example for use in your own projects. This project should be entirely your own work.
-
-# Stargazing Companion App
+# CI Pipeline Practical Project Readme
 
 ## Contents
 * [Brief](#brief)
