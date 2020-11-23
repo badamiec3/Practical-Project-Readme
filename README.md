@@ -40,13 +40,16 @@ CI:
 
 The cloud and CI technologies utilised in the context of this project are described in more detail below. 
 
-###Ansible
+### Ansible
 
-###Jenkins
+Ansible is an open-source software provisioning, configuration management, and application-deployment tool.
+It runs on and can configure many Unix-like systems, as well as Microsoft Windows.
+
+### Jenkins
 
 ![jenkins][jenkins]
 
-###Terraform
+### Terraform
 
 
 ## Architecture
