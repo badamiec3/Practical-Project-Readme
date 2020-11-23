@@ -2,7 +2,8 @@
 
 ## Contents
 * [Aims](#aims)
-* [Benefits Of The Cloud](#benefits-of-the-cloud)
+* [Benefits Of Cloud Solutions and CI](#benefits-of-cloud-solutions-and-ci)
+* [Architecture](#architecture)
 * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
 * [Testing](#testing)
@@ -32,7 +33,7 @@ In order to achieve this, the following technologies are used:
 
 In addition, Git and GitHub were used as the version control system, and a Jira Kanban board was used for project planning.
 
-## Benefits Of The Cloud and CI
+## Benefits Of Cloud Solutions and CI
 There are many benefits to deploying applications in a cloud environment. As well as reduced set up costs, scalability, and the ability to hand over a significant part of the security responsibilities over to the cloud provider, the cloud provides an environment for 
 
 CI:
@@ -48,7 +49,7 @@ The cloud and CI technologies utilised in the context of this project are descri
 ###Terraform
 
 
-## CI Pipeline Architecture
+## Architecture
 ![architecture][architecture]
 
 Pictured above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Jenkins via a webhook to be automatically installed on the cloud VM. From there, tests are automatically run and reports are produced. A testing environment for the app is also run in debugger mode, allowing for dynamic testing.
@@ -62,6 +63,9 @@ This process is handled by a Jenkins 'pipeline' job with distinct build stages. 
 ![buildstages][buildstages]
 
 Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
+
+## CI Pipeline
+
 
 ## Project Planning and Tracking
 A Jira Kanban board was used to plan and track the progress of the project. While this type of project tracking software is usually used for projects involving user stories, in the context of this project it was a highly useful tool to break down the deployment of the CI pipeline into smaller technical steps. 
@@ -145,10 +149,7 @@ Basia Adamiec
 [failures]: https://i.imgur.com/qULC3iT.png
 
 [erd1]: https://i.imgur.com/p9wji5S.png
-[ci]: https://i.imgur.com/2G7joFp.png
-[coverage]: https://i.imgur.com/WDaANiD.png
 
-[trello]: https://i.imgur.com/etDOlwa.png
 [buildstages]: https://i.imgur.com/ba7ntAo.png
 
 
