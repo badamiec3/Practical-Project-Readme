@@ -7,8 +7,7 @@
 * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
 * [Testing](#testing)
-* [Known Issues](#known-issues)
-* [Future Improvements](#future-improvements)
+* [Flask App](#flask-app)
 
 ## Aims
 This project encapsulates the following concepts: 
@@ -127,12 +126,10 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 ![failures][failures]
 
 
+## Flask App
 
 
-## Known Issues
-
-
-## Future Improvements
+![browser][browser]
 
 
 ### Author
@@ -148,6 +145,8 @@ Basia Adamiec
 [frontendtest]: https://i.imgur.com/wz3MkW1.png
 [backendtest]: https://i.imgur.com/dOb6OZe.png
 [failures]: https://i.imgur.com/qULC3iT.png
+
+[browser]: https://i.imgur.com/ZD396ZX.png
 
 
 
