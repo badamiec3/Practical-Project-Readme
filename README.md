@@ -17,7 +17,7 @@ This project encapsulates the following concepts:
 * Infrastructure Management
 * Orchestration
 
-They are used to deploy a simple Flask application comprising of two services in a microservice architecture, and which was already provided, in a Continuous Intergation pipeline.
+They are used to deploy an already provided simple Flask application comprising of two services in a microservice architecture. This application is deployed in a Continuous Intergation pipeline.
 
 In order to achieve this, the following technologies are used:
 * CI Server: Jenkins
@@ -59,23 +59,27 @@ The software installed on the pytest VM was as follows:
 
 ## CI Pipeline
 
+Below is an image showing the Continuous Integration pipeline used to deploy and continuously configure the Flask application.
+
 ![pipeline][pipeline]
+
+This pipeline allows for rapid and simple development-to-deployment by automating the integration process. Code can be produced and pushed to GitHub, which will automatically push the new code to Jenkins via a webhook trigger. From there, tests are automatically run in a separate testing environment from the live cluster, and other build stages performed.
 
 ### Jenkins
 
+When a change is made to the source code, the git repository is pulled by Jenkins and appropriate pytests are performed to ensure the application will function correctly. If the tests pass, docker images of the frontend and backend are built and pushed to Docker Hub. They are then pulled down with Kubernetes and changes are applied to the Docker containers hosted on a Kubernetes cluster in a live environment.  
+
+This process is automated by a Jenkins pipeline job with distinct build stages. If a build stage fails, the subsequent stages are not executed and the job will fail altogether, providing detailed console outputs.
+
+The main build stages in this project are:
+* Pulling code from a Git respository after a web hook trigger
+* Running pytests 
+* Upon succesful testing, building docker images and pushing them to Docker Hub 
+* Configuring the Docker containers running in a Kubernetes cluster
+
+A typical job build is shown below.
+
 ![jenkins][jenkins]
-
-Pictured above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Jenkins via a webhook to be automatically installed on the cloud VM. From there, tests are automatically run and reports are produced. A testing environment for the app is also run in debugger mode, allowing for dynamic testing.
-
-This process is handled by a Jenkins 'pipeline' job with distinct build stages. The design of this type of job means that if a previous build stage fails, the job will fail altogether and provide you with detailed information as to where this occurred. The more modular you make this system, the easier it is to pinpoint where your code is failing. As pictured below, the four build stages are:
-* 'Checkout SCM' (pull code from Git respository)
-* 'Build' (would be more accurately named 'Installation' as Python doesn't require building, in the strictest sense)
-* 'Test' (run pytest, produce coverage report) 
-* 'Run' (start the flask-app service on the local VM, belonging to systemctl)
-
-
-
-Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
 ## Project Planning and Tracking
 A Jira Kanban board was used to plan and track the progress of the project. While this type of project tracking software is usually used for projects involving user stories, in the context of this project it was a highly useful tool to break down the deployment of the CI pipeline into smaller technical steps. 
