@@ -83,7 +83,7 @@ Below are pictured the epics associated with the project, as well as a burndown 
 
 ![burndown][burndown]
 
-You can find the link to this board here: https://badamiec.atlassian.net/jira/software/projects/PPCP/boards/4/roadmap
+The link to the board is found here: https://badamiec.atlassian.net/jira/software/projects/PPCP/boards/4/roadmap
 
 Past sprints and burndown charts can be accessed in the Reports section along with past issues, child issues and estimated story points. 
 
