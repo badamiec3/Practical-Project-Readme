@@ -2,13 +2,13 @@
 
 ## Contents
 * [Aims](#aims)
-* [Architecture](#architecture)
-   * [CI Pipeline](#ci-pipeline)
+* [Benefits Of The Cloud](#benefits-of-the-cloud)
+* [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
 * [Testing](#testing)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
-* [Authors](#authors)
+* [Author](#author)
 
 ## Aims
 This project encapsulates the following concepts: 
@@ -34,10 +34,7 @@ In addition, Git and GitHub were used as the version control system, and a Jira 
 
 ## Benefits Of The Cloud
 
-## Architecture
-
-
-### CI Pipeline
+## CI Pipeline Architecture
 ![ci][ci]
 
 Pictured above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Jenkins via a webhook to be automatically installed on the cloud VM. From there, tests are automatically run and reports are produced. A testing environment for the app is also run in debugger mode, allowing for dynamic testing.
@@ -119,7 +116,7 @@ There are a number of improvements I would like to implement (outside of current
    * This would probably be best achieved by referring to another publicly-available database
 * Users can customise their accounts more with profile pictures, add other users as friends, change the colour palette of the website, etc.
 
-## Authors
+## Author
 Basia Adamiec
 
 [kanban]: https://i.imgur.com/94l3cn6.png
