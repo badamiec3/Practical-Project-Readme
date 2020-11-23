@@ -63,7 +63,7 @@ This process is handled by a Jenkins 'pipeline' job with distinct build stages. 
 * 'Test' (run pytest, produce coverage report) 
 * 'Run' (start the flask-app service on the local VM, belonging to systemctl)
 
-![buildstages][buildstages]
+
 
 Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
@@ -153,7 +153,7 @@ Basia Adamiec
 
 [erd1]: https://i.imgur.com/p9wji5S.png
 
-[buildstages]: https://i.imgur.com/ba7ntAo.png
+
 
 
 
