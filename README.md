@@ -2,13 +2,10 @@
 
 ## Contents
 * [Aims](#aims)
-   * [My Approach](#my-approach)
 * [Architecture](#architecture)
-   * [Database Structure](#database-structure)
    * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
 * [Testing](#testing)
-* [Front-End Design](#front-end-design)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
 * [Authors](#authors)
@@ -35,40 +32,10 @@ In order to achieve this, the following technologies are used:
 
 In addition, Git and GitHub were used as the version control system, and a Jira Kanban board was used for project planning.
 
-
-
-### My Approach
-To achieve this, I have decided to produce a simple stargazing companion app that must allow the user to do the following:
-* Create a user account (satisfies 'Create') that stores:
-   * *User Name*
-   * *First and Last Name*
-   * *Email*
-   * *Password*
-* Create posts of observations that they have made whilst stargazing (satisfies 'Create') with the following information:
-   * *Title* of the post
-   * *Author* of the post
-   * *Date and time* that the post was made
-   * *Observers* who also took part in this observation (essentially tagging other users in a post)
-   * *Location* at which the observation took place
-   * *Azimuth* coordinate of the observed object 
-   * *Altitude* coordinate of the observed object
-   * *Description* of the observation
-* View and update their account details (satisfies 'Read' and 'Update')
-* Delete their account (satisfies 'Delete')
-* Read observations they and other users have created (satisfies 'Read')
-
-Additionally, I would like to allow the user to:
-* Refer to a database of stars and corresponding constellations with coordinate data
-* Add/delete records of stars and constellations in the database
-* Select every star that belongs to a certain constellation
+## Benefits Of The Cloud
 
 ## Architecture
-### Database Structure
-Pictured below is an entity relationship diagram (ERD) showing the structure of the database. Everything in green has been implemented into the app, while everything in red has not.
 
-![ERD][erd1]
-
-As shown in the ERD, the app models a many-to-many relationship between User entities and Observation entities using an association table. This allows the user to create observation posts and tag multiple users in the database with one observation. Similarly, many observations can therefore be associated with a user.
 
 ### CI Pipeline
 ![ci][ci]
@@ -85,10 +52,20 @@ This process is handled by a Jenkins 'pipeline' job with distinct build stages. 
 
 Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
-## Project Tracking
-Trello was used to track the progress of the project (pictured below). You can find the link to this board here: https://trello.com/b/UfMXjN8h/constellations
+## Project Planning and Tracking
+A Jira Kanban board was used to plan and track the progress of the project. While this type of project tracking software is usually used for projects involving user stories, in the context of this project it was a highly useful tool to break down the deployment of the CI pipeline into smaller technical steps. 
 
-![trello][trello]
+Below are pictured the epics associated with the project, as well as a burndown chart for one of the four sprints.
+![kanban][kanban]
+
+![burndown][burndown]
+
+You can find the link to this board here: https://badamiec.atlassian.net/jira/software/projects/PPCP/boards/4/roadmap
+
+Past sprints and burndown charts can be accessed in the Reports section along with past issues, child issues and estimated story points. 
+
+
+
 
 The board has been designed such that elements of the project move from left to right from their point of conception to being finished and fully implemented. Each card is also colour-coded according to which element of the project it pertains. From left to right, these lists are:
 * *Project Requirements*
@@ -122,32 +99,8 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 
 ![failures][failures]
 
-## Front-End Design
-The front-end of the app is rudimentary at this stage, as the front-end is built purely with very simple HTML. It is largely functional and stable, however.
 
-When the user navigates to the URL, they are directed to the home page:
 
-![homeloggedout][homeloggedout]
-
-They are then able to log in or register an account:
-
-![signup][signup]
-
-![login][login]
-
-Once they are logged in, they now have access to the 'Enter Observation' page and their account page:
-
-![homeloggedin][homeloggedin]
-
-Navigating to the 'Enter Observation' page allows them to post an observation and optionally tag up to two other observers, which will appear at the top of the home page:
-
-![enterobservation][enterobservation]
-
-![homenewobservation][homenewobservation]
-
-Navigating to the 'Account' page allows them to view their account details, update them and delete the account if they so desire. Deleting an account will also delete any observation they are associated with:
-
-![account][account]
 
 ## Known Issues
 There are a few bugs with the current build of the app:
@@ -169,6 +122,9 @@ There are a number of improvements I would like to implement (outside of current
 ## Authors
 Basia Adamiec
 
+[kanban]: https://i.imgur.com/94l3cn6.png
+[burndown]: https://i.imgur.com/2XwEDaP.png
+
 [frontendtest]: https://i.imgur.com/wz3MkW1.png
 [backendtest]: https://i.imgur.com/dOb6OZe.png
 [failures]: https://i.imgur.com/qULC3iT.png
@@ -179,10 +135,6 @@ Basia Adamiec
 
 [trello]: https://i.imgur.com/etDOlwa.png
 [buildstages]: https://i.imgur.com/ba7ntAo.png
-[homeloggedout]: https://i.imgur.com/91NbyWE.png
-[signup]: https://i.imgur.com/71f9E6y.png
-[login]: https://i.imgur.com/vzwaTtv.png
-[homeloggedin]: https://i.imgur.com/F4eXJKR.png
-[enterobservation]: https://i.imgur.com/WsBmL6k.png
-[homenewobservation]: https://i.imgur.com/NHxV8Gi.png
-[account]: https://i.imgur.com/oXDX1y3.png
+
+
+
