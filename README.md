@@ -128,6 +128,7 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 
 ## Flask App
 
+![cluster][cluster]
 
 ![browser][browser]
 
@@ -146,7 +147,10 @@ Basia Adamiec
 [backendtest]: https://i.imgur.com/dOb6OZe.png
 [failures]: https://i.imgur.com/qULC3iT.png
 
+[cluster]: https://i.imgur.com/X8JQLaP.png
+
 [browser]: https://i.imgur.com/ZD396ZX.png
+
 
 
 
