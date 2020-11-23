@@ -39,6 +39,15 @@ CI:
 
 The cloud and CI technologies utilised in the context of this project are described in more detail below. 
 
+###Ansible
+
+###Jenkins
+
+![jenkins][jenkins]
+
+###Terraform
+
+
 ## CI Pipeline Architecture
 ![architecture][architecture]
 
@@ -123,6 +132,8 @@ There are a number of improvements I would like to implement (outside of current
 
 ## Author
 Basia Adamiec
+
+[jenkins]: https://i.imgur.com/Ez2Pxsz.png
 
 [architecture]: https://i.imgur.com/wEEHRHN.png
 
