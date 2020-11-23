@@ -2,7 +2,6 @@
 
 ## Contents
 * [Aims](#aims)
-* [Benefits Of Cloud Solutions and CI](#benefits-of-cloud-solutions-and-ci)
 * [Architecture](#architecture)
 * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
@@ -30,28 +29,9 @@ In order to achieve this, the following technologies are used:
 * Reverse Proxy: NGINX
 
 In addition, Git and GitHub were used as the version control system, and a Jira Kanban board was used for project planning.
-
-## Benefits Of Cloud Solutions and CI
-There are many benefits to deploying applications in a cloud environment. As well as reduced set up costs, scalability, and the ability to hand over a significant part of the security responsibilities over to the cloud provider, the cloud provides an environment for 
-
 The cloud and CI technologies utilised in the context of this project are described in more detail below. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Architecture
-
 Pictured below is the architecture utilised for the project.
 
 ![architecture][architecture]
@@ -59,11 +39,9 @@ Pictured below is the architecture utilised for the project.
 The 'install' ec2 VM and the 'pytest' ec2 VM were launched manually using the root user AWS console. Terraform and Ansible running on the 'install' VM were then used to deploy a 'jenkins' VM, two MySQL RDS instances, as well as an EKS Cluster. 
 
 ### Terraform
-
 Terraform is an Infrastructure Management tool which allows developers to control the infrastructure of the cloud service provider, and is an example of Infrastructure as Code. Terraform is often used to deploy staging and test environments due to the ease with which it can be utilised to mimic production environments. It is also widely used to deploy infrastructure across more than one cloud provider simultaneously. In the scope of this project it is used to deploy an ec2 instance to run the CI Server Jenkins, an EKS Cluster which hosts the containerised Flask application using the Orchestration Tool Kubernetes, an RDS instance to provide a database for the application in the live environment, and another RDS instance which the pytest VM connects to in order to run tests.
 
 ### Ansible
-
 Ansible is an open-source Configuration Management tool which can provision and manage software across host nodes. In this project it was used to install the required software and packages on the jenkins VM and the pytest VM. 
 
 The software installed on the jenkins VM was as follows:
