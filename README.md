@@ -59,6 +59,8 @@ The software installed on the pytest VM was as follows:
 
 ## CI Pipeline
 
+![pipeline][pipeline]
+
 ### Jenkins
 
 ![jenkins][jenkins]
@@ -122,6 +124,8 @@ Basia Adamiec
 [jenkins]: https://i.imgur.com/Ez2Pxsz.png
 
 [architecture]: https://i.imgur.com/wEEHRHN.png
+
+[pipeline]: https://i.imgur.com/Y12RGOg.png
 
 [kanban]: https://i.imgur.com/94l3cn6.png
 [burndown]: https://i.imgur.com/2XwEDaP.png
