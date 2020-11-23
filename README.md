@@ -35,7 +35,7 @@ In addition, Git and GitHub were used as the version control system, and a Jira 
 ## Benefits Of The Cloud
 
 ## CI Pipeline Architecture
-![ci][ci]
+![architecture][architecture]
 
 Pictured above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Jenkins via a webhook to be automatically installed on the cloud VM. From there, tests are automatically run and reports are produced. A testing environment for the app is also run in debugger mode, allowing for dynamic testing.
 
@@ -118,6 +118,8 @@ There are a number of improvements I would like to implement (outside of current
 
 ## Author
 Basia Adamiec
+
+[architecture]: https://i.imgur.com/wEEHRHN.png
 
 [kanban]: https://i.imgur.com/94l3cn6.png
 [burndown]: https://i.imgur.com/2XwEDaP.png
