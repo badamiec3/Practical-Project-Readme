@@ -9,7 +9,6 @@
 * [Testing](#testing)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
-* [Author](#author)
 
 ## Aims
 This project encapsulates the following concepts: 
@@ -36,24 +35,56 @@ In addition, Git and GitHub were used as the version control system, and a Jira 
 ## Benefits Of Cloud Solutions and CI
 There are many benefits to deploying applications in a cloud environment. As well as reduced set up costs, scalability, and the ability to hand over a significant part of the security responsibilities over to the cloud provider, the cloud provides an environment for 
 
-CI:
-
 The cloud and CI technologies utilised in the context of this project are described in more detail below. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Architecture
+
+Pictured below is the architecture utilised for the project.
+
+![architecture][architecture]
+
+The 'install' ec2 VM and the 'pytest' ec2 VM were launched manually using the root user AWS console. Terraform and Ansible running on the 'install' VM were then used to deploy a 'jenkins' VM, two MySQL RDS instances, as well as an EKS Cluster. 
+
+### Terraform
+
+Terraform is an Infrastructure Management tool which allows developers to control the infrastructure of the cloud service provider, and is an example of Infrastructure as Code. Terraform is often used to deploy staging and test environments due to the ease with which it can be utilised to mimic production environments. It is also widely used to deploy infrastructure across more than one cloud provider simultaneously. In the scope of this project it is used to deploy an ec2 instance to run the CI Server Jenkins, an EKS Cluster which hosts the containerised Flask application using the Orchestration Tool Kubernetes, an RDS instance to provide a database for the application in the live environment, and another RDS instance which the pytest VM connects to in order to run tests.
 
 ### Ansible
 
-Ansible is an open-source software provisioning, configuration management, and application-deployment tool.
-It runs on and can configure many Unix-like systems, as well as Microsoft Windows.
+Ansible is an open-source Configuration Management tool which can provision and manage software across host nodes. In this project it was used to install the required software and packages on the jenkins VM and the pytest VM. 
+
+The software installed on the jenkins VM was as follows:
+* Docker and docker-compose
+* kubectl
+* Jenkins
+* AWS CLI
+* MySQL
+* Git
+
+The software installed on the pytest VM was as follows:
+* Docker and docker-compose
+* pytest
+* MySQL
+
+## CI Pipeline
 
 ### Jenkins
 
 ![jenkins][jenkins]
-
-### Terraform
-
-
-## Architecture
-![architecture][architecture]
 
 Pictured above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process, i.e. I can produce code on my local machine and push it to GitHub, which will automatically push the new code to Jenkins via a webhook to be automatically installed on the cloud VM. From there, tests are automatically run and reports are produced. A testing environment for the app is also run in debugger mode, allowing for dynamic testing.
 
@@ -67,9 +98,6 @@ This process is handled by a Jenkins 'pipeline' job with distinct build stages. 
 
 Once the app is considered stable, it is then pushed to a separate VM for deployment. This service is run using the Python-based HTTP web server Gunicorn, which is designed around the concept of 'workers' who split the CPU resources of the VM equally. When users connect to the server, a worker is assigned to that connection with their dedicated resources, allowing the server to run faster for each user.
 
-## CI Pipeline
-
-
 ## Project Planning and Tracking
 A Jira Kanban board was used to plan and track the progress of the project. While this type of project tracking software is usually used for projects involving user stories, in the context of this project it was a highly useful tool to break down the deployment of the CI pipeline into smaller technical steps. 
 
@@ -81,25 +109,6 @@ Below are pictured the epics associated with the project, as well as a burndown 
 You can find the link to this board here: https://badamiec.atlassian.net/jira/software/projects/PPCP/boards/4/roadmap
 
 Past sprints and burndown charts can be accessed in the Reports section along with past issues, child issues and estimated story points. 
-
-
-
-
-The board has been designed such that elements of the project move from left to right from their point of conception to being finished and fully implemented. Each card is also colour-coded according to which element of the project it pertains. From left to right, these lists are:
-* *Project Requirements*
-   A list of requirements set out in the brief in order for this to be a successful project.
-* *Project Resources*
-   List of relevant resources for quick access.
-* *User Stories*
-   Any functionality that is implemented into the project first begins as a user story. This keeps the development of every element of the web app focused on the user experience first.
-* *Planning*
-   The initial stages where a specific element (e.g. a block of code, a server, etc.) is being considered for implementation.
-* *In Progress*
-   Once the element has had any code written for it/exists in any way, it is placed in the 'in progress' list.
-* *Testing*
-   Once the element has been created, it moves to the 'testing' list, where its functionality is tested.
-* *Finished*
-   Any element that is considered to be finished (i.e. works according to its specification) lives in this list.
 
 ## Testing
 An important step in the CI pipeline is testing. The Jenkins pipeline in this project is designed in such a way that when a change is made to the source code, tests are ran and must succeed in order for the pipeline to proceed with the building and pushing of updated docker images to Docker Hub. 
@@ -126,7 +135,7 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 ## Future Improvements
 
 
-## Author
+### Author
 Basia Adamiec
 
 [jenkins]: https://i.imgur.com/Ez2Pxsz.png
