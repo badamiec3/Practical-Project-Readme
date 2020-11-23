@@ -121,21 +121,10 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 
 
 ## Known Issues
-There are a few bugs with the current build of the app:
-* If a user attempts to change their email to another email that already exists in the database, the app will inexplicably delete the account entirely
-* Certain errors do not appear on the front end when they should, for example: if the user inputs incorrect login information, they should receive an 'Incorrect Username' or 'Incorrect Password' warning – instead the page merely reloads
+
 
 ## Future Improvements
-There are a number of improvements I would like to implement (outside of current bugs):
-* Implementation of the stars and constellation database to allow you to tag these celestial objects in observations
-* Allow the user to tag an indefinite number of users in an observation, rather than a maximum of two
-* Filter observation posts by user, date, location, etc.
-* Aesthetic overhaul, to make the front-end both more appealing *and* more functional
-   * The aesthetics of an interface are important for the functionality of a web app, insofar as a user can only use functionality that they understand. Confusing aesthetic design will obscure the functionality of the app
-   * This would be implemented using CSS, the easiest approach being with Bootstrap
-* Implementation of other solar system objects that require realtime updates, e.g. planets whose locations in the sky are always changing
-   * This would probably be best achieved by referring to another publicly-available database
-* Users can customise their accounts more with profile pictures, add other users as friends, change the colour palette of the website, etc.
+
 
 ## Author
 Basia Adamiec
@@ -151,7 +140,6 @@ Basia Adamiec
 [backendtest]: https://i.imgur.com/dOb6OZe.png
 [failures]: https://i.imgur.com/qULC3iT.png
 
-[erd1]: https://i.imgur.com/p9wji5S.png
 
 
 
