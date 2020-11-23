@@ -125,10 +125,15 @@ The testing stages make use of the '| grep passed' command and the fact that a J
 
 ![failures][failures]
 
+If the tests pass, the new docker images for the frontend and backend are pushed to Docker Hub, and subsequently pulled down as images for the Docker container deployment managed by Kubernetes.
 
 ## Flask App
 
+The image below shows the structure of the cluster hosting the Flask application. Three replicas of the frontend and three replicas of the backend are deployed, and the deployments are assigned with Cluster IPs. The frontend Cluser IP naturally load-balances between the three backend pods. A load balancer deployed by Kubernetes splits traffic between the frontend containers using an NGINX reverse proxy. The database is accessed by the backend whenever a GET request is made by the frontend, triggered by a user accessing the load balancer on port 80 where NGINX listens.
+
 ![cluster][cluster]
+
+Accesing the load balancer on port 80 will give the following:
 
 ![browser][browser]
 
