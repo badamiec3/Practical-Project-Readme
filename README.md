@@ -32,7 +32,12 @@ In order to achieve this, the following technologies are used:
 
 In addition, Git and GitHub were used as the version control system, and a Jira Kanban board was used for project planning.
 
-## Benefits Of The Cloud
+## Benefits Of The Cloud and CI
+There are many benefits to deploying applications in a cloud environment. As well as reduced set up costs, scalability, and the ability to hand over a significant part of the security responsibilities over to the cloud provider, the cloud provides an environment for 
+
+CI:
+
+The cloud and CI technologies utilised in the context of this project are described in more detail below. 
 
 ## CI Pipeline Architecture
 ![architecture][architecture]
